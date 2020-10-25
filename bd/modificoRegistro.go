@@ -45,7 +45,7 @@ func ModificoRegistro(u models.Usuario, ID string) (bool, error) {
 		registro["ubicacion"] = u.Ubicacion
 	}
 
-	registro["echaNacimiento"] = u.FechaNacimiento
+	registro["fechaNacimiento"] = u.FechaNacimiento
 
 	updtString := bson.M{
 		"$set": registro,
