@@ -11,7 +11,7 @@ import (
 /*InsertoRegistro es la parad final con la BD para insertar los datos del usuario*/
 func InsertoRegistro(u models.Usuario) (string, bool, error) {
 
-	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")

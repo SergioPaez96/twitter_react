@@ -12,7 +12,7 @@ import (
 
 /*BuscoPerfil busca un perfil en la BD*/
 func BuscoPerfil(ID string) (models.Usuario, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*25)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")

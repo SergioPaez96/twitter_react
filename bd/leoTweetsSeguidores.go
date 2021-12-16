@@ -10,7 +10,7 @@ import (
 
 /*LeoTweetsSeguidores lee los tweets de mis seguidores*/
 func LeoTweetsSeguidores(ID string, pagina int) ([]models.DevuelvoTweetsSeguidores, bool) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*25)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")
@@ -28,7 +28,7 @@ func LeoTweetsSeguidores(ID string, pagina int) ([]models.DevuelvoTweetsSeguidor
 		}})
 	condiciones = append(condiciones, bson.M{"$unwind": "$tweet"})
 	condiciones = append(condiciones, bson.M{"$sort": bson.M{"tweet.fecha": -1}})
-	condiciones = append(condiciones, bson.M{"$sip": skip})
+	condiciones = append(condiciones, bson.M{"$skip": skip})
 	condiciones = append(condiciones, bson.M{"$limit": 20})
 
 	cursor, err := col.Aggregate(ctx, condiciones)

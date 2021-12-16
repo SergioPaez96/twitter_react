@@ -10,7 +10,7 @@ import (
 
 /*ChequeoYaExisteUsuario recibe un email de parametro y chequea si ya esta en la BD*/
 func ChequeoYaExisteUsuario(email string) (models.Usuario, bool, string) {
-	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")

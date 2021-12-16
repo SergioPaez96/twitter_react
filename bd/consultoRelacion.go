@@ -11,7 +11,7 @@ import (
 
 /*ConsultoRelacion consulta la relacion entre 2 usuarios*/
 func ConsultoRelacion(t models.Relacion) (bool, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*25)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")

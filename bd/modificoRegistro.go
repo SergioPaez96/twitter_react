@@ -11,7 +11,7 @@ import (
 
 /*ModificoRegistro permite modificar el perfil del usuario*/
 func ModificoRegistro(u models.Usuario, ID string) (bool, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")

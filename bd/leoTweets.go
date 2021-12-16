@@ -12,7 +12,7 @@ import (
 
 /*LeoTweets lee los tweets de un perfil*/
 func LeoTweets(ID string, pagina int64) ([]*models.DevuelvoTweets, bool) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")
@@ -21,7 +21,7 @@ func LeoTweets(ID string, pagina int64) ([]*models.DevuelvoTweets, bool) {
 	var resultados []*models.DevuelvoTweets
 
 	condicion := bson.M{
-		"userid": ID,
+		"userId": ID,
 	}
 
 	opciones := options.Find()

@@ -11,14 +11,14 @@ import (
 
 /*InsertoTweet graba el twwet en la BD*/
 func InsertoTweet(t models.GraboTweet) (string, bool, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")
 	col := db.Collection("tweet")
 
 	registro := bson.M{
-		"userid":  t.UserID,
+		"userId":  t.UserID,
 		"mensaje": t.Mensaje,
 		"fecha":   t.Fecha,
 	}

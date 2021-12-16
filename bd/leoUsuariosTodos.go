@@ -13,7 +13,7 @@ import (
 /*LeoUsuariosTodos Lee los usuarios registrados en el sistema, si se recibe "R" en quienes
 trae solo los que se relacionan conmigo*/
 func LeoUsuariosTodos(ID string, page int64, search string, tipo string) ([]*models.Usuario, bool) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*25)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")

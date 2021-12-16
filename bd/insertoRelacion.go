@@ -9,7 +9,7 @@ import (
 
 /*InsertoRelacion graba la relacion en la BD*/
 func InsertoRelacion(t models.Relacion) (bool, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")

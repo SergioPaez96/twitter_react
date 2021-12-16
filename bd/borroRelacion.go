@@ -9,7 +9,7 @@ import (
 
 /*BorroRelacion borra la relacion en la BD*/
 func BorroRelacion(t models.Relacion) (bool, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*25)
 	defer cancel()
 
 	db := MongoCN.Database("twitter_react")
